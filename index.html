@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FuBall — Football news, fixtures, standings</title>
+  <meta name="description" content="FuBall brings you football news, fixtures, live scores, standings, and player profiles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/img/fuball-logo.svg" alt="FuBall logo" class="logo" />
+        <span class="brand-name">FuBall</span>
+      </a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#news">News</a></li>
+          <li><a href="#fixtures">Fixtures</a></li>
+          <li><a href="#live-scores">Live scores</a></li>
+          <li><a href="#standings">Standings</a></li>
+          <li><a href="#players">Players</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <input id="search" type="search" placeholder="Search teams, players..." aria-label="Search" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>FuBall</h1>
+          <p>Your daily dose of football: faster news, slick fixtures, and live updates—all in blue and black.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#live-scores">View live scores</a>
+            <a class="btn btn-outline" href="#news">Latest news</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest news</h2>
+          <a class="see-all" href="#">See all</a>
+        </div>
+        <div id="news-grid" class="grid grid-news"></div>
+      </div>
+    </section>
+
+    <section id="fixtures" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Upcoming fixtures</h2>
+          <div class="filters">
+            <select id="league-filter" aria-label="Select league"></select>
+            <select id="date-filter" aria-label="Select date"></select>
+          </div>
+        </div>
+        <div id="fixtures-list" class="list fixtures-list"></div>
+      </div>
+    </section>
+
+    <section id="live-scores" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Live scores</h2>
+          <span class="live-dot" aria-hidden="true"></span>
+        </div>
+        <div id="live-list" class="list live-list"></div>
+      </div>
+    </section>
+
+    <section id="standings" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>League standings</h2>
+          <select id="standings-league" aria-label="Select league"></select>
+        </div>
+        <div class="table-wrap">
+          <table class="table standings-table" aria-describedby="standings">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th>MP</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GD</th>
+                <th>Pts</th>
+              </tr>
+            </thead>
+            <tbody id="standings-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="players" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Top players</h2>
+          <div class="filters">
+            <select id="players-league" aria-label="Select league"></select>
+            <select id="players-metric" aria-label="Select metric">
+              <option value="goals">Goals</option>
+              <option value="assists">Assists</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
+        <div id="players-grid" class="grid grid-players"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/fuball-logo.svg" alt="FuBall logo" class="logo" />
+        <span>FuBall</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">
+        <small>© <span id="year"></span> FuBall. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
